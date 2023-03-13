@@ -7,8 +7,8 @@ Version 2:
 - [ ] History of tests taken by students and their responses with explanations
 - [ ] Student Account
 - [x] Have to click explanation in the main page and see it.
-- [ ] Filter for test creation
-- [ ] Need to create delete function for questions.
+- [x] Filter for test creation
+- [x] Need to create delete function for questions. (Already available)
 
 ## Auth levels
 
