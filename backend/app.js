@@ -12,12 +12,12 @@ var app = express();
 
 app.use(helmet());
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, access-control-allow-origin"
-  );
-  next();
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header(
+		"Access-Control-Allow-Headers",
+		"Origin, X-Requested-With, Content-Type, Accept, access-control-allow-origin"
+	);
+	next();
 });
 
 app.use(expressValidator());
@@ -47,39 +47,39 @@ app.use(passport.session());
 
 //bind routes
 app.use(
-  "/api/v1/admin",
-  passport.authenticate("user-token", { session: false }),
-  admin
+	"/api/v1/admin",
+	passport.authenticate("user-token", { session: false }),
+	admin
 );
 app.use(
-  "/api/v1/user",
-  passport.authenticate("user-token", { session: false }),
-  user
+	"/api/v1/user",
+	passport.authenticate("user-token", { session: false }),
+	user
 );
 app.use(
-  "/api/v1/subject",
-  passport.authenticate("user-token", { session: false }),
-  universal
+	"/api/v1/subject",
+	passport.authenticate("user-token", { session: false }),
+	universal
 );
 app.use(
-  "/api/v1/questions",
-  passport.authenticate("user-token", { session: false }),
-  question
+	"/api/v1/questions",
+	passport.authenticate("user-token", { session: false }),
+	question
 );
 app.use(
-  "/api/v1/test",
-  passport.authenticate("user-token", { session: false }),
-  testpaper
+	"/api/v1/test",
+	passport.authenticate("user-token", { session: false }),
+	testpaper
 );
 app.use(
-  "/api/v1/upload",
-  passport.authenticate("user-token", { session: false }),
-  up
+	"/api/v1/upload",
+	passport.authenticate("user-token", { session: false }),
+	up
 );
 app.use(
-  "/api/v1/trainer",
-  passport.authenticate("user-token", { session: false }),
-  stopRegistration
+	"/api/v1/trainer",
+	passport.authenticate("user-token", { session: false }),
+	stopRegistration
 );
 app.use("/api/v1/trainee", trainee);
 app.use("/api/v1/final", results);
@@ -88,33 +88,33 @@ app.use("/api/v1/lala", dummy);
 app.use("/api/v1/login", login);
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/public/index.html"));
+	res.sendFile(path.join(__dirname + "/public/index.html"));
 });
 
 //error handlings
 app.use(function (req, res, next) {
-  next(
-    createError(
-      404,
-      "Invalid API. Use the official documentation to get the list of valid APIS."
-    )
-  );
+	next(
+		createError(
+			404,
+			"Invalid API. Use the official documentation to get the list of valid APIS."
+		)
+	);
 });
 
 app.use((err, req, res, next) => {
-  console.log(err);
-  res.status(err.status).json({
-    success: false,
-    message: err.message,
-  });
+	console.log(err);
+	res.status(err.status).json({
+		success: false,
+		message: err.message,
+	});
 });
 
 app.listen(PORT, (err) => {
-  if (err) {
-    console.log(err);
-  }
+	if (err) {
+		console.log(err);
+	}
 
-  //tool.createadmin();
+	// tool.createadmin();
 
-  console.log(`Server Started. Server listening to port ${PORT}`);
+	console.log(`Server Started. Server listening to port ${PORT}`);
 });

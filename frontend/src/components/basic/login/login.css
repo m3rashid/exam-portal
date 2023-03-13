@@ -89,7 +89,7 @@
   border-right: 0;
 }
 
-.register_login_switch span:nth-child(2) {
+.register_login_switch span:nth-child(3) {
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   border-left: 0;

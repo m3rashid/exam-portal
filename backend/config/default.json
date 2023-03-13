@@ -1,6 +1,6 @@
 {
   "mongodb": {
-    "connectionString": "mongodb+srv://Rohini24:sq3vOXmTp9OP16Pe@onlinequizproject.cbthd8s.mongodb.net/onlineexam?retryWrites=true&w=majority"
+    "connectionString": "mongodb://localhost/exam-portal-v2"
   },
   "jwt": {
     "secret": "ExaminationsPortalsApplication"
