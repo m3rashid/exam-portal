@@ -1,6 +1,4 @@
 var mongoose = require("mongoose");
-var config = require("config");
-let tool = require("./tool");
 
 //database connection
 mongoose.Promise = global.Promise;
