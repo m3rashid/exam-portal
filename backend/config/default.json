@@ -1,8 +1,0 @@
-{
-  "mongodb": {
-    "connectionString": "mongodb://localhost/exam-portal-v2"
-  },
-  "jwt": {
-    "secret": "ExaminationsPortalsApplication"
-  }
-}

@@ -1,7 +1,6 @@
 let UserModel = require("../models/user");
 var passport = require("../services/passportconf");
 var jwt = require("jsonwebtoken");
-var config = require("config");
 
 let userlogin = (req, res, next) => {
 	req.check("emailid", ` Invalid email address`).isEmail().notEmpty();
@@ -31,7 +30,7 @@ let userlogin = (req, res, next) => {
 						res.json({ success: false, message: "Server Error" });
 					}
 
-					var token = jwt.sign({ _id: user._id }, config.get("jwt.secret"), {
+					var token = jwt.sign({ _id: user._id }, "super_secret_jwt", {
 						expiresIn: 5000000,
 					});
 					res.json({
